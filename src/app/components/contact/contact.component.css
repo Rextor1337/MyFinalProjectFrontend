@@ -1,0 +1,31 @@
+.add{
+  display: inline-flex;
+  width: 100%;
+  position: absolute;
+    float: center;
+    text-align: center;
+    height: 100px;
+    width: 150px;
+    left: 700px;
+    
+    
+    bottom: 5px;
+    position: fixed;
+    z-index: 1;
+}
+.addbtn{
+  
+  font-size:80px;
+  color : #198754;
+  cursor : pointer;
+  padding: 10px;
+  
+  
+}
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  mat-expansion-panel-header{
+    margin-bottom: 15px;
+  }
+  

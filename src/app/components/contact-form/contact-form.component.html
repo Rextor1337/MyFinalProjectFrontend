@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>{{data? "Update Contact" : "Add Contact"}}</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="contactForm">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nick</mat-label>
+            <input matInput formControlName="contactNick" >
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Telephone Number</mat-label>
+            <input matInput formControlName="contactNumber" onkeydown="javascript: return event.keyCode === 8 ||
+            event.keyCode === 46 ? true : !isNaN(Number(event.key))">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="contactName">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Surname</mat-label>
+            <input matInput formControlName="contactSurname">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="contactMail">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Relation</mat-label>
+            <input matInput formControlName="contactRelation">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="contactAddress">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Note</mat-label>
+            <input matInput formControlName="contactAdditionalNotes">
+          </mat-form-field>
+    </form>
+      
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button (click)="data? updateContact(): addContact()" [disabled]="contactForm.invalid"  mat-button [mat-dialog-close]="true" class="btn btn-outline-success" cdkFocusInitial>{{data? "Update" : "Add"}}</button>
+</mat-dialog-actions>
